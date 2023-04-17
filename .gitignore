@@ -1,0 +1,7 @@
+.vs
+bin
+obj
+Properties
+Api.csproj.user
+appsettings.Development.json
+appsettings.json
