@@ -13,6 +13,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://10.0.2.2:5054")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

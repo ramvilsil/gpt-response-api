@@ -19,16 +19,16 @@ public class MessageController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<string> Get([FromQuery] string message)
+    public async Task<IActionResult> Get([FromQuery] string message)
     {
         string response = await _chatGPTService.GetResponseAsync(message);
-        return response;
+        return Ok(new { response });
     }
 
     [HttpPost]
-    public async Task<string> Post([FromBody] MessageRequest request)
+    public async Task<IActionResult> Post([FromBody] MessageRequest request)
     {
         string response = await _chatGPTService.GetResponseAsync(request.Message);
-        return response;
+        return Ok(new { response });
     }
 }
