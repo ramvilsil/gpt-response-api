@@ -42,9 +42,9 @@ public class ChatGPTService : IChatGPTService
     {
         return new
         {
-            model = "text-davinci-001",
+            model = "text-davinci-002",
             prompt = message,
-            max_tokens = 15,
+            max_tokens = 50,
             temperature = 0
         };
     }

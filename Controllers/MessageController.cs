@@ -22,6 +22,7 @@ public class MessageController : ControllerBase
     public async Task<IActionResult> Get([FromQuery] string message)
     {
         string response = await _chatGPTService.GetResponseAsync(message);
+        Console.Write($"ChatGPT Response (Latin Script): {response}");
         return Ok(new { response });
     }
 
@@ -29,6 +30,7 @@ public class MessageController : ControllerBase
     public async Task<IActionResult> Post([FromBody] MessageRequest request)
     {
         string response = await _chatGPTService.GetResponseAsync(request.Message);
+        Console.Write($"ChatGPT Response (Latin Script): {response}");
         return Ok(new { response });
     }
 }
