@@ -3,6 +3,6 @@
 bin
 obj
 Properties
-Api.csproj.user
-appsettings.Development.json
+*.csproj.user
+*.Development.json
 appsettings.json
